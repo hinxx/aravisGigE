@@ -288,8 +288,9 @@ aravisCamera::aravisCamera(const char *portName, const char *cameraName,
     const char *functionName = "aravisCamera";
 
     /* glib initialisation */
+#if !GLIB_CHECK_VERSION(2,35,0)
     g_type_init ();
-
+#endif
     /* Duplicate camera name so we can use it if we reconnect */
     this->cameraName = epicsStrDup(cameraName);
 
