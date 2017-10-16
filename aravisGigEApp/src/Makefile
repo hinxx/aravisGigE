@@ -18,11 +18,9 @@ aravisCamera_SRCS += aravisCamera.cpp
 
 DBD += aravisCameraSupport.dbd
 
-# NG3E: works on Linux Mint (glib-2.0_DIR not needed)
-#       aravis installed  /usr/local/
-ENVEXPORTS += export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-USR_INCLUDES += $(shell pkg-config --cflags glib-2.0 aravis-0.4)
-$(warning case 3)
+# NG3E: works on Linux Mint and CentOS 7.3 (glib-2.0_DIR not needed)
+#       aravis-0.4.1 from source installed into /usr/local/
+USR_INCLUDES += $(shell PKG_CONFIG_PATH=/usr/local/lib/pkgconfig pkg-config --cflags glib-2.0 aravis-0.4)
 
 USR_SYS_LIBS += glib-2.0
 USR_SYS_LIBS += aravis-0.4
