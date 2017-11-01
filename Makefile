@@ -2,7 +2,7 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) configure
-# NG3E: do not use vendor - aravis should be installed into /usr/local
+# SHI: do not use vendor - aravis should be installed into /usr/local
 #DIRS := $(DIRS) vendor
 DIRS := $(DIRS) aravisGigEApp
 #aravisGigEApp_DEPEND_DIRS += vendor
@@ -12,7 +12,7 @@ iocs_DEPEND_DIRS += aravisGigEApp
 endif
 include $(TOP)/configure/RULES_TOP
 
-# NG3E: do not touch iocs
+# SHI: do not touch iocs
 #uninstall: uninstall_iocs
 #uninstall_iocs:
 #	$(MAKE) -C iocs uninstall
